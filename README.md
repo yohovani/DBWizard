@@ -13,7 +13,6 @@ The files structure to generate the scripst is a JSON that follow the below stru
 		"table 1":[
 			"name":"string",
 			"attribute 1":[
-				"name":"string"
 				"properties":[
                                       "Column Name": "string",
                                       "Data Type": "string",
