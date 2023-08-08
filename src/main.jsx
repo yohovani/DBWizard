@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css'
+import "bootstrap/js/dist/modal.js"
 
 import {DbContextProvider} from './context/DbContext.jsx'
 
