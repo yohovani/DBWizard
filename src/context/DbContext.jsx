@@ -7,42 +7,24 @@ export function DbContextProvider(props) {
     const [dbData, setDbData] = useState({})
     const [tables, setTables] = useState([])
     const [dbName, setDbName] = useState("")
-
-  
-    function createTable(){
-        setTables(...tables,{
-            "name":"string",
-            "properties":{
-                "Data Type": "string",
-                "Length": "int",
-                "Precision and Scale": 0,
-                "Default Value": "string",
-                "Nullability (NULL/NOT NULL)": true,
-                "Primary Key": "string",
-                "Foreign Key ":"string",
-                "Autoincrement (AUTO_INCREMENT)": true,
-                "Comments": "string"
-            
-            }
-        })
-    }
-  
+    
     
     function setNameDB(name){
       setDbName(name)
       console.log(name)
     }
     
-    function createDataBase(name){
+    function createDataBase(){
         newDb = {
-                "db name":name,
+                "db name":dbName,
                 "tables":tables
         }
         setDbData(newDb)
     }
 
     function addTable(table) {
-        setTables([...tables, table])
+      tables.push(table)
+      setTables(tables)
     }
 
   
@@ -52,7 +34,6 @@ export function DbContextProvider(props) {
         createDataBase: createDataBase,
         addTable: addTable,
         setNameDB: setNameDB,
-        createTable:createTable,
         tables:tables
       }}>
           {props.children}

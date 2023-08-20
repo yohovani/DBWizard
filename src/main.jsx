@@ -9,6 +9,6 @@ import {DbContextProvider} from './context/DbContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <DbContextProvider>
-    <App />
+      <App />
   </DbContextProvider>,
 )
