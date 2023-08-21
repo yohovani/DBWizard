@@ -7,10 +7,12 @@ import ColumnForm from "./ColumnForm";
 export default function DbForm() {
   const { setNameDB } = useContext(DbContext);
   const [numCol, setNumCol] = useState(0)
-
+  const [table, setTable] = useState({})
+  const [numTable, setNumTable] = useState(-1)
+  const { addTable } = useContext(DbContext);
 
   const ChildComponent = () => {
-    return <ColumnForm numCol={numCol}/>;
+    return <ColumnForm numCol={numCol} numTable={numTable}/>;
   };
 
 
@@ -41,7 +43,7 @@ export default function DbForm() {
           <div className="card-header">Tables Definition</div>
           <div className="card-body">
             <div className="d-grid gap-1">
-              <button className="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#FormDbModal">
+              <button className="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#FormDbModal" onClick={() => {setNumTable(numTable+1); addTable({"name":"","columns":[]})}}>
                 Add Table
               </button>
             </div>

@@ -7,7 +7,7 @@ export function DbContextProvider(props) {
     const [dbData, setDbData] = useState({})
     const [tables, setTables] = useState([])
     const [dbName, setDbName] = useState("")
-    
+
     
     function setNameDB(name){
       setDbName(name)
@@ -23,8 +23,19 @@ export function DbContextProvider(props) {
     }
 
     function addTable(table) {
-      tables.push(table)
-      setTables(tables)
+      if(tables.length < 1){
+        tables.push(table)
+        setTables(tables)
+      }else{
+        if(Object.keys(tables[tables.length - 1]).length != 0){
+          tables.push(table)
+          setTables(tables)
+        }
+      }
+    }
+
+    function addColumn(idTable, column){
+      tables[idTable].columns.push(column) 
     }
 
   
@@ -34,7 +45,8 @@ export function DbContextProvider(props) {
         createDataBase: createDataBase,
         addTable: addTable,
         setNameDB: setNameDB,
-        tables:tables
+        tables:tables,
+        addColumn:addColumn
       }}>
           {props.children}
       </DbContext.Provider>

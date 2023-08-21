@@ -14,29 +14,75 @@ The files structure to generate the scripst is a JSON that follow the below stru
 
 ```
 {
-	"db name":"string",
+	"sb name":"string",
 	"tables":[
-		"table 1":[
-			"name":"string",
-			"attribute 1":[
-				"properties":[
-                                      "Column Name": "string",
-                                      "Data Type": "string",
-                                      "Length": "int",
-                                      "Precision and Scale": int,
-                                      "Default Value": "string",
-                                      "Nullability (NULL/NOT NULL)": boolean
-                                      "Primary Key": "string",
-                                      "Foreign Key "string",
-                                      "Autoincrement (AUTO_INCREMENT)": boolean,
-                                      "Comments": "string"
-				]
+		{
+			"name": "table 1",
+			"columns": [
+				{
+					"name": "id",
+					"properties": {
+						"Type": "INTEGER",
+						"Length": "3",
+						"Precision": 0,
+						"Default Value": "",
+						"Nullability": false,
+						"Primary Key": true,
+						"Foreign Key": false,
+						"Autoincrement": true,
+						"Comments": ""
+					}
+				},
+				{
+					"name": "name",
+					"properties": {
+						"Type": "VARCHAR",
+						"Length": "100",
+						"Precision": 0,
+						"Default Value": "",
+						"Nullability": false,
+						"Primary Key": false,
+						"Foreign Key": false,
+						"Autoincrement": false,
+						"Comments": ""
+					}
+				}
 			]
-		]
-		.....
-		"tabla n":[]	
+		},
+				{
+			"name": "table 2",
+			"columns": [
+				{
+					"name": "id",
+					"properties": {
+						"Type": "INTEGER",
+						"Length": "3",
+						"Precision": 0,
+						"Default Value": "",
+						"Nullability": false,
+						"Primary Key": true,
+						"Foreign Key": false,
+						"Autoincrement": true,
+						"Comments": ""
+					}
+				},
+				{
+					"name": "name",
+					"properties": {
+						"Type": "VARCHAR",
+						"Length": "100",
+						"Precision": 0,
+						"Default Value": "",
+						"Nullability": false,
+						"Primary Key": false,
+						"Foreign Key": false,
+						"Autoincrement": false,
+						"Comments": ""
+					}
+				}
+			]
+		}
 	]
 }
-
 
 ```
