@@ -32,6 +32,7 @@ export function DbContextProvider(props) {
           setTables(tables)
         }
       }
+      console.log(tables)
     }
 
     function addColumn(idTable, column){

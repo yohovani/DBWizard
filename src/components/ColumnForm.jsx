@@ -3,6 +3,7 @@ import { DbContext } from "../context/DbContext";
 
 export default function ColumnForm({ numCol, numTable }) {
     const { tables,addColumn } = useContext(DbContext);
+    console.log(numTable)
     var column =  {
         "name": "",
         "properties": {
